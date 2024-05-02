@@ -8,7 +8,7 @@ import {
   Input,
   Button,
   Divider,
-  Alert
+  Alert,
 } from "antd";
 const { Title } = Typography;
 
@@ -18,8 +18,8 @@ const Login = () => {
 
   const formItemLayout = {
     wrapperCol: {
-      md: { span: 20 }
-    }
+      md: { span: 20 },
+    },
   };
 
   return (
@@ -37,7 +37,7 @@ const Login = () => {
               <Input
                 type="text"
                 placeholder="E-Mail"
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 value={email}
               />
             </Form.Item>
@@ -45,7 +45,7 @@ const Login = () => {
               <Input
                 type="password"
                 placeholder="Password"
-                onChange={e => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 value={password}
               />
             </Form.Item>
@@ -53,7 +53,7 @@ const Login = () => {
               <Button
                 type="primary"
                 className="login-form-button"
-                onClick={() => login(email, password)}
+                onClick={() => Login(email, password)}
               >
                 Login
               </Button>

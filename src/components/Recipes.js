@@ -7,7 +7,7 @@ import { getCategories } from "../api";
 const Recipes = () => {
   const [categories, setCategories] = useState([]);
   useEffect(() => {
-    getCategories().then(cats => setCategories(cats));
+    getCategories().then((cats) => setCategories(cats));
   }, []);
   const { path, url } = useRouteMatch();
   return (

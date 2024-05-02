@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Layout, Col, Typography } from "antd";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useRouteMatch, Link } from "react-router-dom";
 import { getRecipes } from "../api";
 import RecipeCard from "./RecipeCard";
 import RecipeDetail from "./RecipeDetail";
@@ -10,7 +10,7 @@ const RecipeList = () => {
   const { category, recipeId } = useParams();
   const [recipes, setRecipes] = useState([]);
   useEffect(() => {
-    getRecipes(category).then(data => setRecipes(data));
+    getRecipes(category).then((data) => setRecipes(data));
   }, [category]);
   return (
     <Layout>
@@ -18,7 +18,7 @@ const RecipeList = () => {
       <Col span={24} align="center">
         {!recipeId &&
           recipes &&
-          recipes.map(recipe => (
+          recipes.map((recipe) => (
             <Link to={`${category}/${recipe.id}`} key={recipe.id}>
               <RecipeCard recipe={recipe} />
             </Link>
